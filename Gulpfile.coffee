@@ -2,6 +2,7 @@ gulp = require 'gulp'
 watch = require 'gulp-watch'
 gutil = require 'gutil'
 coffee = require 'gulp-coffee'
+sass = require 'gulp-sass'
 hamlc = require 'gulp-haml-coffee'
   
 gulp.task 'coffee', ->
@@ -10,12 +11,15 @@ gulp.task 'coffee', ->
       return files.pipe(coffee(bare:true))
         .pipe gulp.dest './public/'
 
+gulp.task 'sass', ->
+  gulp.src './app/styles/**/*.scss'
+    .pipe watch (files) ->
+      return files.pipe(sass())
+        .pipe gulp.dest './public/styles'
+
 gulp.task 'hamlc', ->
   gulp.src './app/templates/**/*.hamlc'
     .pipe(hamlc())
     .pipe gulp.dest('./public/templates/')
 
-gulp.task 'watch', ->
-  gulp.src
-
-gulp.task 'default', ['coffee', 'hamlc', 'watch']
+gulp.task 'default', ['coffee', 'sass', 'hamlc']
