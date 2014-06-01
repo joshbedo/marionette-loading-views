@@ -18,9 +18,9 @@ gulp.task 'sass', ->
         .pipe gulp.dest './public/styles'
 
 gulp.task 'hamlc', ->
-  gulp.src './app/templates/**/*.hamlc'
+  gulp.src './app/**/*.hamlc'
     .pipe watch (files) ->
       return files.pipe(hamlc())
-        .pipe gulp.dest('./public/templates/')
+        .pipe gulp.dest('./public/')
 
 gulp.task 'default', ['coffee', 'sass', 'hamlc']

@@ -1,0 +1,13 @@
+%html
+  %head
+    %title Marionette Application
+    %link{ rel: 'stylesheet', href: '/styles/main.css' }
+
+  %body
+    #page-wrap
+      #header
+        #hero
+      #main
+      #footer
+
+    %script{ type: 'text/javascript', data-main: "application.js", src: 'bower_components/requirejs/require.js' }
