@@ -28,7 +28,7 @@ app/ --> client side files
   - application.js --> application file
 - /styles --> scss files
 
-- /templates --> handlebar templates
+- /templates --> hamlc templates
 server/ --> node server files
 
 - test/ --> unittesting
