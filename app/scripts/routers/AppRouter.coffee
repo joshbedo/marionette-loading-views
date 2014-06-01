@@ -1,4 +1,5 @@
-define ['backbone', 'marionette'], (Marionette) ->
-  return Backbone.Marionette.AppRouter.extend
+define ['marionette'], (Marionette) ->
+  console.log "router created"
+  return Marionette.AppRouter.extend
     appRoutes: 
       "": "index"

@@ -1,4 +1,6 @@
-define ['App', 'backbone', 'marionette', 'views/welcome_view'], (App, Backbone, Marionette, WelcomeView) ->
+define ['app', 'backbone', 'marionette'], (App, Backbone, Marionette) ->
+  #include views
+  console.log App
   return Backbone.Marionette.Controller.extend  
     index: ->
       console.log "index was called"
